@@ -2,12 +2,12 @@ const { Sequelize, DataTypes } = require('sequelize');
 const sequelize = require('../database');  // Import sequelize instance
 
 const SavingAccount = sequelize.define('SavingAccount', {
-    // CustomerID: Unique identifier for the customer
+   
     CustomerID: { 
-        type: DataTypes.STRING,  // Data Type: STRING
+        type: DataTypes.STRING,  
         unique: true, 
         allowNull: false,
-        // Field Metadata
+        
         metadata: {
             description: 'Unique identifier for the customer',
             dataType: 'STRING',
@@ -18,12 +18,12 @@ const SavingAccount = sequelize.define('SavingAccount', {
         }
     },
     
-    // Savings AccountNo: Unique savings account number
+    
     SavingsAccountNo: {
-        type: DataTypes.STRING(20),  // Data Type: STRING(20)
+        type: DataTypes.STRING(20), 
         allowNull: false,
         unique: true,
-        // Field Metadata
+       
         metadata: {
             description: 'Unique savings account number',
             dataType: 'STRING(20)',
@@ -34,11 +34,11 @@ const SavingAccount = sequelize.define('SavingAccount', {
         }
     },
     
-    // AccountType: Type of the account (e.g., Savings, Checking)
+    
     AccountType: {
-        type: DataTypes.STRING(50),  // Data Type: STRING(50)
+        type: DataTypes.STRING(50), 
         allowNull: false,
-        // Field Metadata
+       
         metadata: {
             description: 'Type of account (e.g., Savings, Checking)',
             dataType: 'STRING(50)',
@@ -49,11 +49,11 @@ const SavingAccount = sequelize.define('SavingAccount', {
         }
     },
     
-    // BankName: The bank where the account is held
+    
     BankName: {
-        type: DataTypes.STRING(100),  // Data Type: STRING(100)
+        type: DataTypes.STRING(100),  
         allowNull: false,
-        // Field Metadata
+        
         metadata: {
             description: 'The bank where the account is held',
             dataType: 'STRING(100)',
@@ -64,11 +64,10 @@ const SavingAccount = sequelize.define('SavingAccount', {
         }
     },
     
-    // DebitCardNo: Debit card number associated with the account
     DebitCardNo: {
-        type: DataTypes.STRING(16),  // Data Type: STRING(16)
+        type: DataTypes.STRING(16),  
         allowNull: false,
-        // Field Metadata
+        
         metadata: {
             description: 'Debit card number associated with the account',
             dataType: 'STRING(16)',
@@ -79,11 +78,10 @@ const SavingAccount = sequelize.define('SavingAccount', {
         }
     },
     
-    // CurrentBal: Current balance in the savings account
     CurrentBal: {
-        type: DataTypes.DECIMAL(10, 2),  // Data Type: DECIMAL(10,2)
+        type: DataTypes.DECIMAL(10, 2), 
         allowNull: false,
-        // Field Metadata
+        
         metadata: {
             description: 'Current balance in the savings account',
             dataType: 'DECIMAL(10, 2)',
@@ -94,11 +92,10 @@ const SavingAccount = sequelize.define('SavingAccount', {
         }
     },
     
-    // AccountOpenDate: The date when the account was opened
     AccountOpenDate: {
-        type: DataTypes.DATE,  // Data Type: DATE
+        type: DataTypes.DATE, 
         allowNull: false,
-        // Field Metadata
+       
         metadata: {
             description: 'The date when the account was opened',
             dataType: 'DATE',
@@ -109,12 +106,10 @@ const SavingAccount = sequelize.define('SavingAccount', {
         }
     },
     
-    // CurrentDate: Current date used for derived calculations
     CurrentDate: {
-        type: DataTypes.DATE,  // Data Type: DATE
+        type: DataTypes.DATE,  
         allowNull: true,
-        defaultValue: Sequelize.NOW,  // Defaults to current date if not provided
-        // Field Metadata
+        defaultValue: Sequelize.NOW,  
         metadata: {
             description: 'Current date used for derived calculations',
             dataType: 'DATE',
@@ -125,24 +120,22 @@ const SavingAccount = sequelize.define('SavingAccount', {
         }
     },
     
-    // Months_ACCT_Active: Derived field for the number of months the account has been active
     Months_ACCT_Active: {
-        type: DataTypes.INTEGER,  // Data Type: INTEGER
+        type: DataTypes.INTEGER,  
         allowNull: true,
        
-        // Field Metadata
         metadata: {
             description: 'The number of months the account has been active, derived from AccountOpenDate',
             dataType: 'INTEGER',
             dataLength: 'N/A',
             sampleValue: '24',
-            derived: true,  // It's a derived field
+            derived: true,  
             keys: 'None'
         }
     }
 }, {
-    tableName: 'saving_accounts',  // Explicit table name
-    timestamps: true  // Automatically include createdAt and updatedAt fields
+    tableName: 'saving_accounts',  
+    timestamps: true  
 });
 
 

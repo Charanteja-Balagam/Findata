@@ -1,5 +1,5 @@
 const { Sequelize, DataTypes } = require('sequelize');
-const sequelize = require('../database'); // Import Sequelize instance
+const sequelize = require('../database'); 
 
 const Loan = sequelize.define('Loan', {
     CustomerID: { 
@@ -65,8 +65,8 @@ const Loan = sequelize.define('Loan', {
         comment: 'Total EMI paid so far'
     }
 }, {
-    tableName: 'loan', // Explicitly defining the table name
-    timestamps: false,  // Disable createdAt and updatedAt columns
+    tableName: 'loan', 
+    timestamps: false,  
     comment: 'Stores loan details for customers'
 });
 

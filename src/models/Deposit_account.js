@@ -1,5 +1,5 @@
 const { Sequelize, DataTypes } = require('sequelize');
-const sequelize = require('../database'); // Import Sequelize instance
+const sequelize = require('../database'); 
 
 const DepositAccount = sequelize.define('DepositAccount', {
     customer_id: { 
@@ -57,8 +57,8 @@ const DepositAccount = sequelize.define('DepositAccount', {
        
     }
 }, {
-    tableName: 'deposit_accounts',  // Custom table name
-    timestamps: true,               // Enables createdAt and updatedAt fields
+    tableName: 'deposit_accounts',  
+    timestamps: true,               
     comment: 'Table storing deposit account details'
 });
 

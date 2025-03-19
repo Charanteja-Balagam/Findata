@@ -20,7 +20,7 @@ const insuranceRoute= require('./routes/insuranceRoute');
 
 
 // Middleware
-app.use(express.json()); // To parse JSON bodies
+app.use(express.json()); 
 
 // Use routes
 app.use('/savings', savingAccountRoute);
@@ -33,18 +33,16 @@ app.use('/insurance', insuranceRoute )
 // MySQL connection to check and create the database
 const connection = mysql.createConnection({
   host: 'localhost',
-  user: 'root',      // Replace with your DB username
-  password: 'charan16', // Replace with your DB password
+  user: 'root',      
+  password: 'xxxx', 
 });
 
-// Connect to MySQL and create the database if it doesn't exist
 connection.connect((err) => {
   if (err) {
     console.error('Error connecting to MySQL:', err);
     return;
   }
 
-  // Create the database if it doesn't exist
   connection.query('CREATE DATABASE IF NOT EXISTS Findata', (err) => {
     if (err) {
       console.error('Error creating database:', err);
@@ -53,12 +51,10 @@ connection.connect((err) => {
 
     console.log('Database created or already exists');
 
-    // After creating the database, connect with Sequelize and sync the models
     sequelize.authenticate()
       .then(() => {
         console.log('Connection has been established successfully.');
 
-        // Sync Sequelize models with the database
         sequelize.sync({ force: true })
           .then(() => {
             console.log('Database synced');

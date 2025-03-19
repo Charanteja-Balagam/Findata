@@ -1,5 +1,5 @@
 const { Sequelize, DataTypes } = require('sequelize');
-const sequelize = require('../database'); // Import Sequelize instance
+const sequelize = require('../database'); 
 
 const CreditCard = sequelize.define('CreditCard', {
     CustomerID: { 
@@ -40,8 +40,8 @@ const CreditCard = sequelize.define('CreditCard', {
         comment: 'Total outstanding amount on the card'
     }
 }, {
-    tableName: 'credit_cards', // Explicit table name
-    timestamps: false,  // Disable createdAt and updatedAt columns
+    tableName: 'credit_cards', 
+    timestamps: false,  
     comment: 'Stores customer credit card details'
 });
 

@@ -1,5 +1,5 @@
 const { Sequelize, DataTypes } = require('sequelize');
-const sequelize = require('../database'); // Import Sequelize instance
+const sequelize = require('../database'); 
 
 const Insurance = sequelize.define('Insurance', {
     CustomerID: { 
@@ -44,8 +44,8 @@ const Insurance = sequelize.define('Insurance', {
         comment: 'Yearly premium payment'
     }
 }, {
-    tableName: 'insurance', // Explicit table name
-    timestamps: false,  // Disable createdAt and updatedAt columns
+    tableName: 'insurance', 
+    timestamps: false,  
     comment: 'Stores customer insurance details'
 });
 
